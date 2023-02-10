@@ -19,7 +19,7 @@ router.post('/login',(req,res)=>{
         bcrypt.compare(password,user.password)
         .then( valid =>{
             if(!valid){
-                res.status(500).json({error:"Wrong credentials"});
+                res.json({error:"Wrong credentials"});
             } 
            /* else{
                 res.status(404).json({message:"Successfully login",id:user._id});
